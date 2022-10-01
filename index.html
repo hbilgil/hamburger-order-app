@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Restaurant</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header class="header">
+      <h1 class="title">HAMBURGER RESTAURANT</h1>
+      <h2 class="game-info">We serve 2 types: Kofte or Tavuk Burgers</h2>
+    </header>
+  
+    <main class="main">
+      <div class="orderCounter">
+        <h2 class="orderCounterHeader">Order Counter</h2>
+        <div class="orders-container">
+          <div class="order-box">
+            <p class="order" id="kofte-score">Kofte: 0</p>
+            <p class="order-message" id="order-message-kofte">Thank you for your order!</p>
+            <p class="error-kofte" id="error-kofte">Sorry, Kofte Stock is Over!</p>
+          </div>
+  
+          <div class="order-box">
+            <p class="order" id="tavuk-score">Tavuk: 0</p>
+            <p class="order-message" id="order-message-tavuk">Thank you for your order!</p>
+            <p class="error-tavuk" id="error-tavuk">Sorry, Tavuk Stock is Over!</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="buttons">
+        <button class="btn btn-square" id="kofte">
+          <img src="./köfte.png" class="choice">
+          <h3>Kofte</h3>
+        </button>
+        
+        <button class="btn btn-square" id="tavuk">
+          <img src="./tavuk.png" class="choice">
+          <h3>Chicken</h3>
+        </button>
+      </div>
+    </main>
+  
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+      <a href="https://github.com/hbilgil" target="_blank"> Halil Bilgil </a>
+      </p>
+    </footer>
+
+    <!--Hidden parts-->
+
+    <div class="ingredients-modal" id="ingredients-modal"><!--the start-game-modal will be invisible until it is invoked by JavaScript function dynamically-->
+      <div class="ingredients-modal-content">
+          <h2 class="welcome-msg">Welcome to HOTBURGER</h2>
+          <h3 class="info-message">Please add ingredients you want</h3>
+
+          <div class="ingredients">
+            <div class="material">
+              <input class="material-check-box" type="checkbox" id="checkBox" required>
+              <p class="material-left">Ekmek</p>
+              <p class="value" ekmekValue>5</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="checkbox" id="checkBox">
+              <p class="material-left">Marul</p>
+              <p class="value" marulValue>5</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="checkbox" id="checkBox">
+              <p class="material-left">Tursu</p>
+              <p class="value" tursuValue>5</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="checkbox" id="checkBox">
+              <p class="material-left">Sogan</p>
+              <p class="value" soganValue>5</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="checkbox" id="checkBox">
+              <p class="material-left">Domates</p>
+              <p class="value" domatesValue>5</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="checkbox" id="checkBox">
+              <p class="material-left">Patates</p>
+              <p class="value" patatesValue>5</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="checkbox" id="checkBox">
+              <p class="material-left">Paket Sos</p>
+              <p class="value" paketSosValue>5</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="checkbox" id="checkBox">
+              <p class="material-left">Cola</p>
+              <p class="value" colaValue>5</p>
+            </div>
+          </div>
+
+          <button class="btn start" start-btn>Order</button>
+      </div>
+    </div>
+
+    <div class="kofte-choice-modal" id="kofte-choice-modal"><!--the start-game-modal will be invisible until it is invoked by JavaScript function dynamically-->
+      <div class="kofte-choice-modal-content">
+          <h3 class="info-message">Please choose how you want to eat your kofte</h3>
+
+          <div class="ingredients">
+            <div class="material">
+              <input class="material-check-box" type="radio" id="radioAz" name="radio">
+              <p class="material-left">Az Pismis</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="radio" id="radioOrta" name="radio">
+              <p class="material-left">Orta Pismis</p>
+            </div>
+            <div class="material">
+              <input class="material-check-box" type="radio" id="radioCok" name="radio">
+              <p class="material-left">Cok Pismis</p>
+            </div>
+          </div>
+
+          <button class="btn kofte-choice" choice-btn>Choose</button>
+      </div>
+    </div>
+  
+    <div class="error-modal" id="errorModal">
+      <p class="error-message" id="errorMessage"></p>
+      <button class="btn btn-ok" id="okBtn">OK</button>
+    </div>
+
+    <div class="material-error-modal" id="materialErrorModal">
+      <p class="material-error-message" id="materialErrorMessage"></p>
+      <button class="btn btn-return" id="returnBtn">Return</button>
+    </div>
+
+    <div class="overlayWindow" id="overlayWindow"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
