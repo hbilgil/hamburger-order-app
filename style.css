@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+body { 
+  background-color: #222831;
+  color: #ddd;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-around;
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
+}
+
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.title {
+  font-size: 2.5em;
+  margin: 10px;
+  color: #ffb900;
+}
+
+.main {
+  margin-top: 20px;
+  text-align: center;
+}
+  
+.orderCounter {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+  
+.orderCounterHeader {
+  font-size: 32px;
+}
+
+.orders-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px dotted #e5e5e5;
+  border-radius: 15px;
+}
+  
+.order-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+}
+  
+.order {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.order-message {
+    display: none;
+}
+
+.order-message.active {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color:lightgreen;
+}
+
+.error-kofte,
+.error-tavuk {
+  display: none;
+ 
+}
+
+.error-kofte.active,
+.error-tavuk.active {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  color:palevioletred;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 60px;
+}
+  
+.btn {
+  border-radius: 10px;
+  background-color: #393e46;
+}
+
+.btn-square {
+  width: 160px;
+  height: 160px;
+}
+
+.btn:hover {
+  background-color: #4a4f57;
+  border: 1px solid #ffb900;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 5px 0px #ffb900;
+  box-shadow: 2px 2px 5px 0px #ffb900;
+}
+    
+.btn:active {
+  background-color: #5b5f68;
+}
+
+.choice {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  color: #ddd;
+  font-size: 20px;
+}
+
+a:link { 
+  text-decoration: none; 
+  color: whitesmoke;
+}
+
+a:visited { 
+  text-decoration: none; 
+  color: whitesmoke;
+}
+
+a:hover { 
+  text-decoration: none; 
+  color: orange;
+}
+
+a:active { 
+  text-decoration: none; 
+  color: whitesmoke;
+}
+
+/* Hidden parts */
+
+.ingredients-modal {
+    display: none;
+    position: fixed;
+    padding: 30px;
+    width: 400px;
+    z-index: 1; /*the div will be in front of the overlayWindow*/
+    top: 50%; /*exact place of the div*/
+    left: 50%; /*exact place of the div*/
+    transform: translate(-50%, -50%) scale(0); /*will be animated*/
+    transition: 200ms ease-in-out;
+    border-radius: 6px;
+    box-shadow: 0 0 50px rgba(249, 248, 248, 0.5);
+    background-color:gainsboro;
+}
+
+.ingredients-modal-content,
+.kofte-choice-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-msg {
+  font-size: 4vh;
+  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-weight: bold;
+  align-self: center;
+  color: black;
+}
+
+.info-message {
+  color: black;
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 3vh;
+  gap: 2vw;
+}
+
+.material {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  color: black;
+}
+
+
+.value {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color:blue;
+}
+
+.kofte-choice-modal {
+  background-color:gainsboro !important;
+}
+
+.kofte-choice-modal .info-message {
+  font-size: 20px;
+}
+
+.error-modal,
+.material-error-modal,
+.kofte-choice-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #222831;
+    box-shadow: 0 0 50px rgba(249, 248, 248, 0.5);
+    text-align: center;
+    font-size: 30px;
+    user-select: none;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+}
+  
+.ingredients-modal.active,
+.error-modal.active,
+.kofte-choice-modal.active,
+.material-error-modal.active {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.start {
+  align-self: center;
+  width: 80px;
+  height: 50px;
+}
+
+.kofte-choice {
+  width: 90px;
+  height: 60px;
+  font-size: 20px;
+}
+  
+.material-error-message,
+.error-message {
+    font-size: 20px;
+}
+  
+.btn-return,
+.btn-ok {
+    padding: 10px 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+  
+.overlayWindow {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+  
+.overlayWindow.active {
+    display: block;
+}
