@@ -462,13 +462,25 @@ function materialsAreReadyForKofte() {
 }
 
 function completePotatoForKofteOrder() {
-    kofteOrderMessage.textContent = "Potato chips are ready";
-    kofteOrderMessage.classList.add('active');
+    const potatoCheckbox = document.querySelector('[potato]');
+    if(potatoCheckbox.checked === false) {
+        kofteOrderMessage.textContent = "You have NOT ordered potato chips!";
+        kofteOrderMessage.classList.add('active');
+    } else {
+        kofteOrderMessage.textContent = "Potato chips are ready";
+        kofteOrderMessage.classList.add('active');
+    }
 }
 
 function prepareDrinkForKofteOrder() {
-    kofteOrderMessage.textContent = "Your drink is ready";
-    kofteOrderMessage.classList.add('active');
+    const colaCheckbox = document.querySelector('[cola]');
+    if(colaCheckbox.checked === false) {
+        kofteOrderMessage.textContent = "You have NOT ordered any beverage!";
+        kofteOrderMessage.classList.add('active');
+    } else {
+        kofteOrderMessage.textContent = "Your beverage is ready";
+        kofteOrderMessage.classList.add('active');
+    }
 }
 
 function startTavukCooking() {
@@ -517,13 +529,25 @@ function materialsAreReadyForTavuk() {
 }
 
 function completePotatoForTavukOrder() {
-    tavukOrderMessage.textContent = "Potato chips are ready";
-    tavukOrderMessage.classList.add('active');
+    const potatoCheckbox = document.querySelector('[potato]');
+    if(potatoCheckbox.checked === false) {
+        tavukOrderMessage.textContent = "You have NOT ordered potato chips!";
+        tavukOrderMessage.classList.add('active');
+    } else {
+        tavukOrderMessage.textContent = "Potato chips are ready";
+        tavukOrderMessage.classList.add('active');
+    }
 }
 
 function prepareDrinkForTavukOrder() {
-    tavukOrderMessage.textContent = "Your drink is ready";
-    tavukOrderMessage.classList.add('active');
+    const colaCheckbox = document.querySelector('[cola]');
+    if(colaCheckbox.checked === false) {
+        tavukOrderMessage.textContent = "You have NOT ordered any beverage!";
+        tavukOrderMessage.classList.add('active');
+    } else {
+        tavukOrderMessage.textContent = "Your beverage is ready";
+        tavukOrderMessage.classList.add('active');
+    }
 }
 
 /*--------------new function---------------------
