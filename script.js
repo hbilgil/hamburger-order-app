@@ -22,7 +22,7 @@ const tavukChoice = document.getElementById('tavuk');
 
 //ARRAY variable declarations for Stock
 
-let ekmek = 5;
+let ekmek = 11; //ekmek is always required to be added and to see the final error message of burgers are out of stock, it was changed to "11"
 let marul = 5;
 let tursu = 5;
 let sogan = 5;
@@ -251,7 +251,7 @@ function setFinalMessage() {
 }
 
 function setMaterialErrorMessage() {
-    materialErrorMessage.textContent = `Opps!! We are out of Ekmek and can NOT add anymore`;
+    materialErrorMessage.textContent = `Opps!! We are out of some materials you have chosen and can NOT add anymore`;
 }
 
 function setMissingEkmekErrorMessage() {
@@ -533,7 +533,7 @@ Define a function for restarting to renew stocks
 function renewStocks() {
   kofteScore = 0;
   tavukScore = 0;
-  ekmek = 5;
+  ekmek = 11;
   marul = 5;
   tursu = 5;
   sogan = 5;
@@ -557,6 +557,9 @@ function renewStocks() {
   closeKofteStockErrorMessage();
   closeTavukStockErrorMessage();
   closeAllModals();
+  setTimeout(() => {
+    openOrderModal();
+  }, 1000);
 }
 
 function openOrderModal() {
